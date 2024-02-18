@@ -2,6 +2,7 @@ import frp_rand_solver as frprs
 import fastroute_problem as frp
 import route_solution as rsol
 
+
 dist_matrix =[
 [0, 20, 30, 40],
 [20, 0, 30, 5],

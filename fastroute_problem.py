@@ -12,7 +12,7 @@ class FastRouteProb(prob.Problem):
         for a_list in self._dist_matrix:
             tmp_str = tmp_str + ', '.join([str(i) for i in a_list])
             tmp_str = tmp_str + '\n'
-            return str(tmp_str)
+        return str(tmp_str)
         
     def count_locations(self):
         return len(self._dist_matrix)

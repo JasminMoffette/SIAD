@@ -35,6 +35,7 @@ class Solver:
         # Arrêter le chronomètre et calculer le temps utilisé
         self._last_run_end = time.time()
         self._last_run_sec = self._last_run_end - self._last_run_start
+    
     def solve(self, prob=None):
         # Préparer l'exécution
         self._prepare()
@@ -47,3 +48,5 @@ class Solver:
         # Retourner une solution
         # TODO Le code ci-dessous est un code temporaire
         return solution.Solution()
+       
+
