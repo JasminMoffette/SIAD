@@ -1,0 +1,7 @@
+reset;
+model SIAD.mod;
+data SIAD.dat;
+option solver gurobi;
+solve;
+display x;
+display DistanceTotal;

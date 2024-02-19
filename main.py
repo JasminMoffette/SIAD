@@ -19,6 +19,6 @@ frp_sol = frp_solver.solve(frp_inst)
 print('Solution retournée:')
 print(str(frp_sol))
 print(str(frp_sol.evaluate()))
-#hdhdnf
+
 
 
