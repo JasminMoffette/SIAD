@@ -5,10 +5,12 @@ import sys
 class Route(sol.Solution):
 
 
-    def __init__(self, solvedProblem=frp.FastRouteProb()):
+    def __init__(self, solvedProblem = frp.FastRouteProb()):
         super(Route, self).__init__()
         self.visit_sequence = []
+        self.totalTime = 0
         self.problem = solvedProblem
+
     
     def __str__(self):
         tmp_str = ', '.join([str(i) for i in self.visit_sequence])
@@ -27,10 +29,11 @@ class Route(sol.Solution):
             curr_destination = self.visit_sequence[i + 1]
             curr_distance = self.problem._dist_matrix[curr_source][curr_destination]
             obj_val = obj_val + curr_distance
-            return obj_val
+        return obj_val
 
     def validate(self):
         locations_list = list(range(0, self.problem.count_locations()))
         if sorted(self.visit_sequence) == locations_list:
             return True
         return False
+

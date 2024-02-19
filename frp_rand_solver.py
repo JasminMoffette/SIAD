@@ -21,7 +21,6 @@ class FrpRandSolver(solver.Solver):
         all_locations = range(0, n_locations)
         curr_rsol.visit_sequence = np.random.permutation(all_locations)
         if(self.verbose > 1):
-            print('Solution initiale et objectif:')
             print(str(curr_rsol))
             print(str(curr_rsol.evaluate()))
     
