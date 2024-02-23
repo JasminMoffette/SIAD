@@ -14,6 +14,7 @@ class FrpAmplMipSolver:
 
     # instamciation du modele
 
+#hello
 
 
 
