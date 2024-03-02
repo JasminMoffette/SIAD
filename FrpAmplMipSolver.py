@@ -29,18 +29,38 @@ class FrpAmplMipSolver(solver.Solver):
 
         #Générer les datas selon la matrice prob reçue en paramètre
         matrice = prob._dist_matrix
-        c = [i for i in range(1, prob.count_locations)]
-        ct_df = pd.DataFrame(matrice, c, c)
+        c = [i for i in range(1, len(prob._dist_matrix)+1)]
+        ct_df = pd.DataFrame(matrice,columns = c, index = c)
         #Assigner le CT dans le .data aux datas du problème
+        ampl.set['C'] = c
         ampl.get_parameter('CT').set_values(ct_df)
+       
 
         #Résoudre le problème
         ampl.solve()
 
-        solution_ampl = ampl.getVariable('z')
-            
-        #route.visitesequence
-        return
+        solution_ampl = ampl.getVariable('z').get_values()
+        print(solution_ampl)
+        path = []
+        recherche = 1
+        done = True
+        
+        while done == True:
+            for element in solution_ampl:
+
+                if element[0] == recherche:
+                    if element[2] == 1:
+                        path.append(element[1])
+                        recherche = element[1]
+
+            if len(path) == len(c):
+                done = False
+        
+        #fermer l'engine
+        ampl.close()
+        
+        route.visit_sequence = path
+        return route
 
 
 
