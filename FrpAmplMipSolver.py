@@ -40,7 +40,6 @@ class FrpAmplMipSolver(solver.Solver):
         ampl.solve()
 
         solution_ampl = ampl.getVariable('z').get_values()
-        print(solution_ampl)
         path = []
         recherche = 1
         done = True
