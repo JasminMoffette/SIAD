@@ -17,7 +17,7 @@ class Solver:
         # 1: Sortie minimale
         # 2: Sortie détaillée
         # >2: Niveau débogage
-        self.verbose = 1
+        self.verbose = 0
 
     def _prepare(self):
         # Initialiser tous les attributs pour l'exécution
